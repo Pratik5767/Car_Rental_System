@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CustomerRoutingModule } from './customer-routing.module';
 import { CustomerDashboardComponent } from './components/customer-dashboard/customer-dashboard.component';
+import { NgZorroImportsModules } from 'src/app/NgZorroImportsModules';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { CustomerDashboardComponent } from './components/customer-dashboard/cust
   ],
   imports: [
     CommonModule,
-    CustomerRoutingModule
+    CustomerRoutingModule,
+    NgZorroImportsModules
   ]
 })
 export class CustomerModule { }
