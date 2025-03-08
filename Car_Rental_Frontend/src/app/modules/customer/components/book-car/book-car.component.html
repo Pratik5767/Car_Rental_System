@@ -1,7 +1,7 @@
 <div style="background-color: #f8f8f8; min-height: 91vh;">
     <div style="padding-top: 10px;"></div>
 
-    <div style="margin-top: 10px;" class="child" *ngFor="let car of cars">
+    <div style="margin-top: 10px;" class="child" *ngIf="car">
         <div nz-row>
             <div nz-col nzSpan="8">
                 <img class="profile" style="height: 130px; width: 200px; border-radius: 10px;" [src]="car.processedImg"
@@ -24,12 +24,6 @@
                 </h5>
 
                 <hr />
-                <div style="float: right;">
-                    <button style="margin-left: 10px;" nzSize="small" nz-button nz-Type="primary"
-                        routerLink="/customer/book_car/{{car.id}}">
-                        Book Car
-                    </button>
-                </div>
             </div>
         </div>
     </div>
