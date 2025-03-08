@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -18,5 +19,11 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public List<CarDto> getAllCars() {
         return carRepository.findAll().stream().map(Car::getCarDto).collect(Collectors.toList());
+    }
+
+    @Override
+    public CarDto getCarById(Long carId) {
+        Optional<Car> optionalCar = carRepository.findById(carId);
+        return optionalCar.map(Car::getCarDto).orElse(null);
     }
 }
