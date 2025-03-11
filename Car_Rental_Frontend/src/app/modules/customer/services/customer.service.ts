@@ -24,6 +24,12 @@ export class CustomerService {
         });
     }
 
+    bookACar(carId: number, bookCarDto: any): Observable<any> {
+        return this.http.post(BASIC_URL + "/api/customer/car/book/" + carId, bookCarDto, {
+            headers: this.createAuthorizationHeader()
+        });
+    }
+
     createAuthorizationHeader(): HttpHeaders {
         let authHeaders: HttpHeaders = new HttpHeaders();
         return authHeaders.set(

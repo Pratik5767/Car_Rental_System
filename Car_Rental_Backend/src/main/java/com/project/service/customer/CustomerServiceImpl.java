@@ -40,6 +40,7 @@ public class CustomerServiceImpl implements CustomerService {
     public boolean bookACar(Long carId, BookACarDto bookACarDto) {
         Optional<User> optionalUser = userRepository.findById(bookACarDto.getUser_id());
         Optional<Car> optionalCar = carRepository.findById(carId);
+
         if (optionalCar.isPresent() && optionalUser.isPresent()) {
             BookACar bookACar = new BookACar();
             long differenceInMilliseconds = bookACarDto.getToDate().getTime() - bookACarDto.getFromDate().getTime();
