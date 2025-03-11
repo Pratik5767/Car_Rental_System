@@ -1,13 +1,12 @@
 package com.project.controller;
 
+import com.project.dto.BookACarDto;
 import com.project.dto.CarDto;
 import com.project.service.customer.CustomerService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,5 +30,14 @@ public class CustomerController {
             return ResponseEntity.ok(carDto);
         }
         return ResponseEntity.notFound().build();
+    }
+
+    @PostMapping("/car/book/{carId}")
+    public ResponseEntity<?> BookACar(@PathVariable Long carId, @RequestBody BookACarDto bookACarDto) {
+        boolean success = customerService.bookACar(carId, bookACarDto);
+        if (success) {
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 }
