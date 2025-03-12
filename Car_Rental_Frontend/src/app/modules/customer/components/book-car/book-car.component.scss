@@ -61,3 +61,53 @@ h2:hover {
     padding-bottom: 20px;
     margin-top: 20px;
 }
+
+.dashboard-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.filter-grid {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter-fields-width {
+    display: flex;
+    align-items: center;
+}
+
+nz-form-item {
+    display: flex;
+    align-items: center;
+}
+
+nz-form-label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+nz-date-picker {
+    width: 200px;
+}
+
+.filterBtn {
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    padding: 2px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filterBtn:hover {
+    background-color: #333;
+}

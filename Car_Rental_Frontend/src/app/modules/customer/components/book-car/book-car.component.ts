@@ -3,6 +3,7 @@ import { CustomerService } from '../../services/customer.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { StorageService } from 'src/app/auth/services/storage/storage.service';
 
 @Component({
     selector: 'app-book-car',
@@ -15,6 +16,7 @@ export class BookCarComponent {
     carId: number = this.activateRoute.snapshot.params['id'];
     bookACarForm!: FormGroup;
     isSpinning: boolean = false;
+    dateFormat = "yyyy-mm-dd";
 
     constructor(
         private customerService: CustomerService,
@@ -26,6 +28,7 @@ export class BookCarComponent {
             fromDate: [null, Validators.required],
             toDate: [null, Validators.required]
         });
+
         this.getCarById();
     }
 
@@ -35,5 +38,23 @@ export class BookCarComponent {
             res.processedImg = 'data:image/jpeg;base64,' + res.returnedImage;
             this.car = res;
         });
+    }
+
+    bookCar(formData: any){
+        this.isSpinning = true;
+        let obj = {
+            fromDate: formData.fromDate,
+            toDate: formData.toDate,
+            userId: StorageService.getUserId()
+        }
+        this.customerService.bookACar(this.carId, obj).subscribe((res) => {
+            this.isSpinning = false;
+            console.log(res);
+            this.message.success("Car Booked successfully", {nzDuration: 5000});
+        }, error => {
+            this.isSpinning = false;
+            this.message.error("Something went wrong", {nzDuration: 5000});
+            console.log(error);
+        })
     }
 }

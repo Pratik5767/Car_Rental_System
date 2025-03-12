@@ -20,5 +20,5 @@ public class BookACarDto {
 
     private BookCarStatus bookCarStatus;
 
-    private Long user_id;
+    private Long userId;
 }
