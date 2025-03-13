@@ -44,7 +44,7 @@ public class CustomerServiceImpl implements CustomerService {
         if (optionalCar.isPresent() && optionalUser.isPresent()) {
             BookACar bookACar = new BookACar();
             long differenceInMilliseconds = bookACarDto.getToDate().getTime() - bookACarDto.getFromDate().getTime();
-            long days = TimeUnit.MICROSECONDS.toDays(differenceInMilliseconds);
+            long days = TimeUnit.MILLISECONDS.toDays(differenceInMilliseconds);
             bookACar.setDays(days);
             bookACar.setUser(optionalUser.get());
             bookACar.setCar(optionalCar.get());
@@ -56,5 +56,11 @@ public class CustomerServiceImpl implements CustomerService {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public List<BookACarDto> getBookingByUserId(Long userId) {
+        return bookACarRepository.findAllByUserId(userId)
+                .stream().map(BookACar::getBookACarDto).collect(Collectors.toList());
     }
 }

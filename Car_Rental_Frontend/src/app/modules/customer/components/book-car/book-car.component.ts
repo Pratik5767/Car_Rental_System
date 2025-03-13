@@ -16,7 +16,7 @@ export class BookCarComponent {
     carId: number = this.activateRoute.snapshot.params['id'];
     bookACarForm!: FormGroup;
     isSpinning: boolean = false;
-    dateFormat = "yyyy-mm-dd";
+    dateFormat = 'yyyy-mm-dd';
 
     constructor(
         private customerService: CustomerService,

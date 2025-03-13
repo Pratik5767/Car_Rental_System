@@ -21,4 +21,8 @@ public class BookACarDto {
     private BookCarStatus bookCarStatus;
 
     private Long userId;
+
+    private String email;
+
+    private String userName;
 }
