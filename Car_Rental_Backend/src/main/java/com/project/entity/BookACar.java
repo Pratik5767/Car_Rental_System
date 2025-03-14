@@ -48,7 +48,7 @@ public class BookACar {
         dto.setAmount(amount);
         dto.setBookCarStatus(bookCarStatus);
         dto.setEmail(user.getEmail());
-        dto.setUserName(user.getUsername());
+        dto.setUserName(user.getName());
         dto.setUserId(user.getId());
         return dto;
     }

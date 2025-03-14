@@ -56,4 +56,9 @@ public class AdminController {
         }
         return ResponseEntity.notFound().build();
     }
+
+    @GetMapping("/car/bookings")
+    public ResponseEntity<?> getBookings() {
+        return ResponseEntity.ok(adminService.getBooking());
+    }
 }

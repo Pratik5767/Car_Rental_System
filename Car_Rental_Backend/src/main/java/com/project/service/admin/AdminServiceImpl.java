@@ -1,7 +1,10 @@
 package com.project.service.admin;
 
+import com.project.dto.BookACarDto;
 import com.project.dto.CarDto;
+import com.project.entity.BookACar;
 import com.project.entity.Car;
+import com.project.repository.BookACarRepository;
 import com.project.repository.CarRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -16,6 +19,7 @@ import java.util.stream.Collectors;
 public class AdminServiceImpl implements AdminService {
 
     private final CarRepository carRepository;
+    private final BookACarRepository bookACarRepository;
 
     @Override
     public boolean postCar(CarDto carDto) {
@@ -80,5 +84,10 @@ public class AdminServiceImpl implements AdminService {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public List<BookACarDto> getBooking() {
+        return bookACarRepository.findAll().stream().map(BookACar::getBookACarDto).collect(Collectors.toList());
     }
 }

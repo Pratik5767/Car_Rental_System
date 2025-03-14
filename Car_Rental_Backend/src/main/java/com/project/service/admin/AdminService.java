@@ -1,5 +1,6 @@
 package com.project.service.admin;
 
+import com.project.dto.BookACarDto;
 import com.project.dto.CarDto;
 
 import java.io.IOException;
@@ -15,4 +16,6 @@ public interface AdminService {
     CarDto getCarById(Long carId);
 
     boolean updateCar(Long carId, CarDto carDto);
+
+    List<BookACarDto> getBooking();
 }
