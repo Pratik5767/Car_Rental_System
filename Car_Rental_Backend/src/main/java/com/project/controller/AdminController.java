@@ -50,7 +50,6 @@ public class AdminController {
     @PutMapping("/car/{carId}")
     public ResponseEntity<?> updateCar(@PathVariable Long carId, @ModelAttribute CarDto carDto) {
         boolean success = adminService.updateCar(carId, carDto);
-
         if (success) {
             return ResponseEntity.ok().build();
         }
@@ -60,5 +59,14 @@ public class AdminController {
     @GetMapping("/car/bookings")
     public ResponseEntity<?> getBookings() {
         return ResponseEntity.ok(adminService.getBooking());
+    }
+
+    @GetMapping("/car/booking/{bookingId}/{status}")
+    public ResponseEntity<?> changeBookingStatus(@PathVariable Long bookingId, @PathVariable String status) {
+        boolean success = adminService.changeBookingStatus(bookingId, status);
+        if (success) {
+            return ResponseEntity.ok().build();
+        }
+        return ResponseEntity.notFound().build();
     }
 }
