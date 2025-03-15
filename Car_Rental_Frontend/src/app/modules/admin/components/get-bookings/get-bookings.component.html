@@ -9,7 +9,7 @@
                 <th style="font-weight: bolder; color: #003793;">Days</th>
                 <th style="font-weight: bolder; color: #003793;">Price</th>
                 <th style="font-weight: bolder; color: #003793;">Status</th>
-                <!-- <th style="font-weight: bolder; color: #003793;">Action</th> -->
+                <th style="font-weight: bolder; color: #003793;">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -20,6 +20,7 @@
                 <td>{{ booking.toDate | date: 'MMM d, y' }}</td>
                 <td>{{ booking.days }}</td>
                 <td>{{ booking.amount }}</td>
+
                 <td>
                     <strong
                         [ngStyle]="{'color': booking.bookCarStatus === 'APPROVED' ? 'green' : booking.bookCarStatus === 'REJECTED' ? 'blue' : 'red'}">
@@ -27,10 +28,10 @@
                     </strong>
                 </td>
 
-                <!-- <td>
+                <td>
                     <span *ngIf="booking.bookCarStatus == 'PENDING'">
                         <button style="margin-left: 10px;" nzSize="small" nz-button nzType="primary"
-                            (click)="changeBookingStatus(booking.id, 'Approve')" nzDanger>
+                            (click)="changeBookingStatus(booking.id, 'Approve')">
                             Approve
                         </button>
 
@@ -39,7 +40,7 @@
                             Reject
                         </button>
                     </span>
-                </td> -->
+                </td>
             </tr>
         </tbody>
     </nz-table>
