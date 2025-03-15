@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NzMessageService } from 'ng-zorro-antd/message';
 import { CustomerService } from '../../services/customer.service';
 
 @Component({
@@ -11,10 +10,7 @@ export class CustomerDashboardComponent {
 
     cars: any = [];
 
-    constructor(
-        private customerService: CustomerService,
-        private message: NzMessageService
-    ) {
+    constructor(private customerService: CustomerService) {
         this.getAllCars();
     }
 
