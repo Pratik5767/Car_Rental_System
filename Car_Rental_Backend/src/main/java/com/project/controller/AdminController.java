@@ -1,6 +1,7 @@
 package com.project.controller;
 
 import com.project.dto.CarDto;
+import com.project.dto.SearchCarDto;
 import com.project.service.admin.AdminService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -68,5 +69,10 @@ public class AdminController {
             return ResponseEntity.ok().build();
         }
         return ResponseEntity.notFound().build();
+    }
+
+    @PostMapping("/car/search")
+    public ResponseEntity<?> searchCar(@RequestBody SearchCarDto searchCarDto) {
+        return ResponseEntity.ok(adminService.searchCar(searchCarDto));
     }
 }
