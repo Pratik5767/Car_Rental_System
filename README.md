@@ -2,6 +2,7 @@
 
 ## 📌 Project Overview  
 The **Car Rental System** is a full-stack web application that allows **customers** to search and book rental cars while giving **admins** full control over car listings and booking approvals. 
+
 This system provides authentication, car management, and booking functionalities using **Angular 16** for the frontend and **Spring Boot** for the backend, with **MySQL** as the database.  
 
 ---
