@@ -4,9 +4,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #f8f8f8;
 }
 
 .child {
+    margin-top: 40px;
     padding: 50px;
     width: 100%;
     max-width: 680px;
