@@ -1,0 +1,88 @@
+.inner-content {
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.dashboard-filter {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+
+.filter-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 100%;
+}
+
+.filter-select-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.filter-fields-width {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+}
+
+nz-form-item {
+    min-width: 220px;
+    flex: 1;
+}
+
+nz-form-label {
+    font-weight: bold;
+    color: #333;
+    margin-right: 5px;
+}
+
+nz-form-control {
+    width: 250px;
+}
+
+nz-select {
+    width: 100%;
+}
+
+.transmission-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.transmission-container nz-form-control {
+    width: 250px;
+}
+
+.button-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.filterBtn {
+    background: black ;
+    color: white;
+    padding: 5px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.filterBtn:hover {
+    background: white;
+    color: black;
+    border: 1px solid black;
+}
